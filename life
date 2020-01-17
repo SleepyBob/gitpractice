@@ -1,0 +1,31 @@
+import math
+import random
+
+random.seed(1)
+print("Guess")
+print("BASIC Computer Games by David Ahl\n")
+
+print("THIS IS A NUMBER GUESSING GAME. I'LL THINK")
+print("OF A NUMBER BETWEEN 1 AND ANY LIMIT YOU WANT.")
+print("THEN YOU HAVE TO GUESS WHAT IT IS.\n")
+
+L=int(input("WHAT LIMIT DO YOU WANT? "))
+
+L1=math.floor(math.log(L,10)/math.log(2,10))+1
+print("I'M THINKING OF A NUMBER BETWEEN 1 AND"+str(L))
+print("NOW YOU TRY TO GUESS WHAT IT IS.")
+M=random.randint(1,L)
+# print("\n The answer is "+str(M))
+G=0
+N=0
+while(N!=M):
+    G=G+1
+    N=int(input("WHAT IS YOUR GUESS? "))
+    if N>M:
+        print("Too High")
+    if N<M:
+        print("Too Low")
+
+print("You Got it in "+str(G)+" guesses!")
+if G>L1:
+    print("You could have gotten it in "+str(L1))
